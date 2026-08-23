@@ -29,7 +29,8 @@ Portfolio/
 ├── css/
 │   └── style.css            # Folhas de estilo, temas CSS e responsividade
 ├── js/
-│   └── script.js            # Lógica interativa, animações e navegação
+│   ├── app.js               # Lógica interativa, animações e navegação
+│   └── projects-data.js     # Catálogo e dados estruturados dos projetos
 ├── index.html               # Estrutura principal da página (Single Page)
 ├── .gitignore               # Arquivos ignorados pelo Git
 └── README.md                # Documentação técnica do portfólio
