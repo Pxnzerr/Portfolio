@@ -1,7 +1,4 @@
-/* ==========================================================================
-   PORTFOLIO DESIGN SYSTEM - DARK GLASSMORPHISM & AMBIENT GLOW
-   Inspired by R.Dev404 / Custom tailored for Arthur Clark (Pxnzerr)
-   ========================================================================== */
+/* Portfolio Stylesheet - Arthur Clark (Pxnzerr) */
 
 :root {
   /* Colors */
@@ -29,12 +26,12 @@
   --accent-cyan: #38bdf8;
   --accent-green: #10b981;
   
-  /* Gemini AI Aurora Red Background Glows */
-  --glow-gemini-1: radial-gradient(circle at 15% 15%, rgba(225, 29, 72, 0.24) 0%, rgba(244, 63, 94, 0.12) 30%, transparent 65%);
-  --glow-gemini-2: radial-gradient(circle at 85% 20%, rgba(190, 18, 60, 0.22) 0%, rgba(136, 19, 55, 0.1) 40%, transparent 70%);
-  --glow-gemini-3: radial-gradient(circle at 50% 45%, rgba(255, 30, 86, 0.18) 0%, rgba(159, 18, 57, 0.08) 35%, transparent 65%);
-  --glow-gemini-4: radial-gradient(circle at 80% 80%, rgba(225, 29, 72, 0.2) 0%, rgba(120, 10, 40, 0.08) 45%, transparent 65%);
-  --glow-gemini-5: radial-gradient(circle at 20% 85%, rgba(159, 18, 57, 0.18) 0%, transparent 55%);
+  /* Ambient Background Glows */
+  --glow-ambient-1: radial-gradient(circle at 15% 15%, rgba(225, 29, 72, 0.24) 0%, rgba(244, 63, 94, 0.12) 30%, transparent 65%);
+  --glow-ambient-2: radial-gradient(circle at 85% 20%, rgba(190, 18, 60, 0.22) 0%, rgba(136, 19, 55, 0.1) 40%, transparent 70%);
+  --glow-ambient-3: radial-gradient(circle at 50% 45%, rgba(255, 30, 86, 0.18) 0%, rgba(159, 18, 57, 0.08) 35%, transparent 65%);
+  --glow-ambient-4: radial-gradient(circle at 80% 80%, rgba(225, 29, 72, 0.2) 0%, rgba(120, 10, 40, 0.08) 45%, transparent 65%);
+  --glow-ambient-5: radial-gradient(circle at 20% 85%, rgba(159, 18, 57, 0.18) 0%, transparent 55%);
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -69,11 +66,11 @@ html {
 body {
   background-color: var(--bg-main);
   background-image: 
-    var(--glow-gemini-1),
-    var(--glow-gemini-2),
-    var(--glow-gemini-3),
-    var(--glow-gemini-4),
-    var(--glow-gemini-5);
+    var(--glow-ambient-1),
+    var(--glow-ambient-2),
+    var(--glow-ambient-3),
+    var(--glow-ambient-4),
+    var(--glow-ambient-5);
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -550,6 +547,7 @@ button {
 .badges-group {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.75rem;
 }
 
@@ -565,7 +563,7 @@ button {
   font-weight: 600;
   color: var(--text-primary);
   backdrop-filter: blur(10px);
-  transition: all var(--transition-fast);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 }
 
@@ -577,10 +575,10 @@ button {
 }
 
 .tech-badge:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
   background: var(--bg-surface-hover);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  border-color: rgba(244, 63, 94, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 15px rgba(225, 29, 72, 0.2);
   color: #fff;
 }
 
@@ -1117,9 +1115,9 @@ button {
 .btn-modal-secondary:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
-/* ==========================================================================
-   DYNAMIC SCROLL ANIMATIONS (SMOOTH & CLEAN LAYOUT)
-   ========================================================================== */
+}
+
+/* Animations & Reveals */
 .reveal, 
 .timeline-col,
 .timeline-item,
@@ -1154,39 +1152,6 @@ button {
 .stack-category.active-reveal {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Tech Badges Base Alignment & Smooth Entrance */
-.badges-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.tech-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.55rem 1rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  backdrop-filter: blur(10px);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  cursor: default;
-  transform: none; /* Keep clean flow */
-}
-
-.tech-badge:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: var(--bg-surface-hover);
-  border-color: rgba(244, 63, 94, 0.4);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 15px rgba(225, 29, 72, 0.2);
-  color: #fff;
 }
 
 /* Micro float effect on avatar and highlights */

@@ -1,10 +1,4 @@
-/**
- * PORTFOLIO APPLICATION LOGIC & INTERACTION
- * Arthur Clark (Pxnzerr)
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
   const projectsContainer = document.getElementById('projectsContainer');
@@ -25,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let isAllProjectsVisible = false;
   const INITIAL_PROJECT_COUNT = 4;
 
-  // 1. Render Projects Grid
   function renderProjects(showAll = false) {
     if (!projectsContainer || !Array.isArray(projectsData)) return;
 
@@ -37,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'project-card';
       card.setAttribute('data-id', proj.id);
 
-      // Create code snippet preview
       const previewCode = proj.previewSnippet ? proj.previewSnippet : `// ${proj.title}\n// Tech: ${proj.technologies.join(', ')}`;
 
       card.innerHTML = `
@@ -76,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       projectsContainer.appendChild(card);
     });
 
-    // Attach click events to "View Details" buttons
     document.querySelectorAll('.btn-details').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const id = e.currentTarget.getAttribute('data-id');
@@ -89,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Helper: Escape HTML in code previews
   function escapeHtml(str) {
     return str
       .replace(/&/g, "&amp;")
@@ -99,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/'/g, "&#039;");
   }
 
-  // 2. Modal Open / Close Logic
   function openModal(id) {
     const project = projectsData.find(p => p.id === id);
     if (!project) return;
@@ -109,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDesc.textContent = project.fullDesc || project.shortDesc;
     modalSnippet.textContent = project.previewSnippet || `// ${project.title}`;
     
-    // Tech tags
     modalTechStack.innerHTML = '';
     project.technologies.forEach(tech => {
       const tag = document.createElement('span');
@@ -118,11 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
       modalTechStack.appendChild(tag);
     });
 
-    // Links
     modalGithubLink.href = project.githubUrl;
     modalDemoLink.href = project.demoUrl || project.githubUrl;
 
-    // Show modal
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -135,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
   if (modalMacClose) modalMacClose.addEventListener('click', closeModal);
 
-  // Close on backdrop click
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
@@ -144,14 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
       closeModal();
     }
   });
 
-  // 3. Toggle View All Projects / Show Less
   if (toggleProjectsBtn) {
     toggleProjectsBtn.addEventListener('click', () => {
       isAllProjectsVisible = !isAllProjectsVisible;
@@ -171,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Scrollspy & Active Navigation Tracking
   function onScroll() {
     let current = '';
     const scrollPosition = window.pageYOffset + 200;
@@ -195,13 +177,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', onScroll);
 
-  // 5. Mobile Menu Toggle
   if (mobileToggle && navLinksList) {
     mobileToggle.addEventListener('click', () => {
       navLinksList.classList.toggle('show-mobile');
     });
 
-    // Close menu when clicking link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navLinksList.classList.remove('show-mobile');
@@ -209,24 +189,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Framer Motion Scroll & InView Animation Engine
-  function initFramerMotion() {
+  function initAnimations() {
     if (typeof Motion !== 'undefined') {
-      const { animate, inView, timeline, spring } = Motion;
+      const { animate, inView } = Motion;
 
-      // 6.1 Hero Elements Initial Entrance
       animate('.hero-title', { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, easing: [0.16, 1, 0.3, 1] });
       animate('.hero-bio', { opacity: [0, 1], y: [25, 0] }, { duration: 0.8, delay: 0.15, easing: [0.16, 1, 0.3, 1] });
       
-      // Hero Contacts Cards Stagger
       document.querySelectorAll('.hero-contacts .contact-card').forEach((card, idx) => {
         animate(card, { opacity: [0, 1], y: [30, 0] }, { duration: 0.6, delay: 0.25 + (idx * 0.1), easing: [0.16, 1, 0.3, 1] });
       });
 
-      // Hero Avatar Floating & Entrance
       animate('.hero-avatar-wrapper', { opacity: [0, 1], scale: [0.92, 1] }, { duration: 1, delay: 0.2, easing: [0.16, 1, 0.3, 1] });
 
-      // 6.2 Scroll InView Timeline items
       document.querySelectorAll('.timeline-col').forEach(col => {
         inView(col, () => {
           const items = col.querySelectorAll('.timeline-item');
@@ -236,7 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { margin: "0px 0px -60px 0px" });
       });
 
-      // 6.3 Scroll InView Tech Stack Categories & Badges
       document.querySelectorAll('.stack-category').forEach(cat => {
         inView(cat, () => {
           const label = cat.querySelector('.category-label');
@@ -254,7 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { margin: "0px 0px -40px 0px" });
       });
 
-      // 6.4 Scroll InView Projects Grid Cards
       window.observeNewProjects = () => {
         document.querySelectorAll('.project-card').forEach((card, idx) => {
           inView(card, () => {
@@ -268,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       window.observeNewProjects();
 
-      // 6.5 Scroll InView About Box & Hobbies Pills
       const aboutBox = document.querySelector('.about-box');
       if (aboutBox) {
         inView(aboutBox, () => {
@@ -287,15 +259,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
     } else {
-      // Fallback if CDN is offline
       document.querySelectorAll('.reveal, .timeline-item, .contact-card, .project-card, .tech-badge, .hobby-pill').forEach(el => {
         el.classList.add('active-reveal');
       });
     }
   }
 
-  // Initial execution
   renderProjects(false);
-  initFramerMotion();
+  initAnimations();
   onScroll();
 });

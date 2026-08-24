@@ -1,70 +1,46 @@
-# 🌟 Portfólio Pessoal | Arthur Clark Francisco (Pxnzerr)
+# Portfólio | Arthur Clark Francisco (Pxnzerr)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Pxnzerr-181717?logo=github)](https://github.com/Pxnzerr)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Site de portfólio moderno e interativo desenvolvido com foco em performance, micro-interações fluidas, design responsivo e apresentação profissional de projetos em **Java, Python, C#, PHP/Laravel, Estruturas de Dados e Bancos de Dados**.
+Portfólio pessoal desenvolvido em HTML, CSS e JavaScript puro (Vanilla), reunindo meus principais projetos em Java, Python, C#, PHP/Laravel, Estruturas de Dados e Bancos de Dados.
 
----
+## Estrutura do Repositório
 
-## 🎨 Destaques & Funcionalidades
-
-- **Design Responsivo & Estética Dark Mode**: Layout adaptável a qualquer dispositivo (Mobile, Tablet, Desktop) com paleta de cores moderna e tipografia (*Outfit*, *Inter* e *JetBrains Mono*).
-- **Navegação Flutuante (Pill Navbar)**: Barra de navegação com indicador ativo dinâmico e transições suaves.
-- **Seção de Projetos em Destaque**: Apresentação detalhada de repositórios principais com badges de tecnologias, links diretos e destaques de arquitetura.
-- **Linha do Tempo Educacional & Experiência**: Visualização cronológica da formação técnica em Informática no COTEMIG.
-- **Matriz de Habilidades & Tecnologias**: Categorização clara entre Backend, Frontend, Banco de Dados e Ferramentas.
-- **Terminal Interativo & Micro-Animações**: Feedback visual aprimorado e interatividade com Motion Engine.
-
----
-
-## 📁 Estrutura do Projeto
-
-```
+```text
 Portfolio/
-├── assets/                  # Ícones, imagens e recursos estáticos
+├── assets/              # Recursos estáticos (imagens e ícones)
 ├── css/
-│   └── style.css            # Folhas de estilo, temas CSS e responsividade
+│   └── style.css        # Estilos globais e layout responsivo
 ├── js/
-│   ├── app.js               # Lógica interativa, animações e navegação
-│   └── projects-data.js     # Catálogo e dados estruturados dos projetos
-├── index.html               # Estrutura principal da página (Single Page)
-├── .gitignore               # Arquivos ignorados pelo Git
-└── README.md                # Documentação técnica do portfólio
+│   ├── app.js           # Comportamento interativo e animações
+│   └── projects-data.js # Dados dos projetos e repositórios
+├── index.html           # Página principal
+├── LICENSE              # Licença MIT
+└── README.md            # Documentação
 ```
 
----
+## Como Executar Localmente
 
-## 🚀 Como Visualizar Localmente
+Como o projeto utiliza apenas tecnologias web padrão, não é necessário instalar dependências:
 
-Não requer instalação de dependências externas (Zero Dependency / Vanilla Web):
-
-1. **Clone o repositório:**
+1. Clone o repositório:
    ```bash
    git clone https://github.com/Pxnzerr/Portfolio.git
    ```
 
-2. **Abra o arquivo `index.html` em seu navegador:**
-   - Dê um duplo clique no arquivo `index.html`, ou
-   - Utilize a extensão **Live Server** no VS Code / IDE.
+2. Abra o arquivo `index.html` diretamente em qualquer navegador moderno ou utilizando uma extensão como o **Live Server** no VS Code.
 
----
+## Tecnologias
 
-## 🛠️ Tecnologias Utilizadas
+- HTML5
+- CSS3 (Flexbox, CSS Grid e CSS Variables)
+- JavaScript (ES6+)
+- Motion Library (animações de entrada e scroll)
+- Google Fonts (Outfit, Inter, JetBrains Mono)
 
-- **HTML5 Semântico** — Estruturação acessível e otimizada para SEO.
-- **CSS3 Moderno** — CSS Variables, Flexbox, CSS Grid e animações customizadas.
-- **JavaScript (ES6+)** — Manipulação eficiente do DOM e controle dinâmico da interface.
-- **Motion Engine** — Transições e micro-interações fluidas.
-- **Google Fonts** — *Outfit*, *Inter* e *JetBrains Mono*.
+## Contato
 
----
-
-## 👤 Autor
-
-**Arthur Clark Francisco**
-- GitHub: [@Pxnzerr](https://github.com/Pxnzerr)
-- Email: [arthurclarkjj44@gmail.com](mailto:arthurclarkjj44@gmail.com)
+- **GitHub:** [@Pxnzerr](https://github.com/Pxnzerr)
+- **LinkedIn:** [Arthur Clark Francisco](https://www.linkedin.com/in/arthur-clark-francisco-671a76312/)
+- **Email:** [arthurclarkjj44@gmail.com](mailto:arthurclarkjj44@gmail.com)

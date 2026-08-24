@@ -5,19 +5,18 @@ const projectsData = [
     category: "Python & Algoritmos",
     year: "2026",
     tag: "Destaque",
-    shortDesc: "Calculadora de alta precisão em Python utilizando Pilha (Stack), Fila (Queue), algoritmo Shunting Yard de Dijkstra e análise de complexidade assintótica O(n).",
-    fullDesc: "Desenvolvida com foco em ciência da computação e eficiência algorítmica, esta aplicação processa expressões matemáticas complexas convertendo notação infixa para posfixa (Reverse Polish Notation) através do algoritmo Shunting Yard de Dijkstra. Implementa estruturas de dados personalizadas (Pilhas e Filas) com validação de sintaxe, suporte a operadores com precedência e avaliação em tempo linear O(n).",
+    shortDesc: "Calculadora em Python que avalia expressões matemáticas usando Pilhas, Filas e o algoritmo Shunting Yard.",
+    fullDesc: "Aplicação desenvolvida em Python para avaliar expressões matemáticas convertendo a notação infixa tradicional para notação posfixa (Reverse Polish Notation) através do algoritmo Shunting Yard. Implementa estruturas de dados de Pilha e Fila para garantir a precedência correta de operadores e validação de sintaxe.",
     previewType: "code",
     previewSnippet: `class ShuntingYardCalculator:
     def __init__(self):
         self.operators = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
 
     def parse_expression(self, expr: str) -> list:
-        # Conversão de Infix para RPN usando Stacks & Queues (O(n))
         output_queue = Queue()
         operator_stack = Stack()
         ...`,
-    technologies: ["Python", "Estruturas de Dados", "Shunting Yard", "Pilhas (Stack)", "Filas (Queue)", "Complexidade O(n)"],
+    technologies: ["Python", "Estruturas de Dados", "Shunting Yard", "Pilhas", "Filas"],
     githubUrl: "https://github.com/Pxnzerr/calculadora-estruturas-de-dados",
     demoUrl: "https://github.com/Pxnzerr/calculadora-estruturas-de-dados"
   },
@@ -27,18 +26,17 @@ const projectsData = [
     category: "Java & Backend",
     year: "2026",
     tag: "Sistema CLI",
-    shortDesc: "Sistema robusto de gestão de eventos com controle de lotes, emissão, venda e validação de ingressos com persistência e regras de negócio em Java.",
-    fullDesc: "O EventPass é um sistema completo desenvolvido em Java voltado para a administração de eventos de médio e grande porte. Conta com controle de capacidade máxima por evento, gestão de lotes com precificação dinâmica, autenticação de organizadores, geração de códigos únicos de autenticação para bilhetagem e validação rápida em tempo real (check-in / anti-fraude).",
+    shortDesc: "Aplicação em Java para controle de lotes, emissão, venda e validação de ingressos de eventos.",
+    fullDesc: "Sistema desenvolvido em Java voltado para gestão e bilhetagem de eventos. Inclui controle de capacidade por lote, cadastro de organizadores, geração de identificadores únicos para ingressos e rotina de validação e check-in.",
     previewType: "code",
     previewSnippet: `public class EventoService {
     private final Map<UUID, Ingresso> ingressosValidados = new ConcurrentHashMap<>();
 
     public boolean validarIngresso(String codigoHash) {
-        // Validação com verificação de autenticidade e unicidade
         return ingressosValidados.computeIfAbsent(codigoHash, k -> new Ingresso(k)).isValid();
     }
 }`,
-    technologies: ["Java", "POO", "Gestão de Eventos", "CLI Architecture", "Segurança", "Validação"],
+    technologies: ["Java", "POO", "Gestão de Eventos", "CLI", "Coleções Java"],
     githubUrl: "https://github.com/Pxnzerr/EventPass",
     demoUrl: "https://github.com/Pxnzerr/EventPass"
   },
@@ -48,8 +46,8 @@ const projectsData = [
     category: "Java & Automação",
     year: "2026",
     tag: "POO Industrial",
-    shortDesc: "Controlador de sensor de temperatura industrial em Java com alto grau de encapsulamento, monitoramento de limites e disparo de alertas.",
-    fullDesc: "Projeto focado em boas práticas de Programação Orientada a Objetos (POO), modelando sensores industriais térmicos com restrições rigorosas de encapsulamento, estados operacionais, limites de tolerância crítica e sistema de alerta de superaquecimento ou falha de leitura em tempo real.",
+    shortDesc: "Simulador de monitoramento térmico em Java com controle de limites operacionais e alertas.",
+    fullDesc: "Projeto em Java para simular a leitura de sensores de temperatura, aplicando conceitos de orientação a objetos e encapsulamento. Monitora variações de temperatura e dispara alertas caso atinja limites críticos definidos.",
     previewType: "code",
     previewSnippet: `public class SensorTemperatura {
     private double temperaturaAtual;
@@ -62,7 +60,7 @@ const projectsData = [
         }
     }
 }`,
-    technologies: ["Java", "POO", "Encapsulamento", "Automação", "Engenharia de Software"],
+    technologies: ["Java", "POO", "Encapsulamento", "Automação"],
     githubUrl: "https://github.com/Pxnzerr/Java_ControleDeTemperatura",
     demoUrl: "https://github.com/Pxnzerr/Java_ControleDeTemperatura"
   },
@@ -72,8 +70,8 @@ const projectsData = [
     category: "Full Stack / PHP",
     year: "2026",
     tag: "Web App",
-    shortDesc: "Aplicação web desenvolvida com ecossistema Laravel, Blade templates, banco de dados relacional e arquitetura MVC moderna.",
-    fullDesc: "Sistema estruturado em Laravel utilizando o padrão arquitetural MVC (Model-View-Controller). Implementa rotas RESTful, migrations de banco de dados, renderização dinâmica com Blade, autenticação e validação de formulários de ponta a ponta.",
+    shortDesc: "Aplicação web desenvolvida com PHP, framework Laravel, Blade e banco de dados relacional.",
+    fullDesc: "Projeto web estruturado no padrão MVC utilizando o framework Laravel. Conta com rotas RESTful, autenticação, templates dinâmicos com Blade Engine e integração com banco de dados via migrations e Eloquent ORM.",
     previewType: "code",
     previewSnippet: `class DashboardController extends Controller
 {
@@ -83,7 +81,7 @@ const projectsData = [
         return view('dashboard.index', compact('dados'));
     }
 }`,
-    technologies: ["PHP", "Laravel", "Blade Engine", "MySQL", "JavaScript", "CSS3"],
+    technologies: ["PHP", "Laravel", "Blade", "MySQL", "JavaScript", "CSS3"],
     githubUrl: "https://github.com/Pxnzerr/Laravel_test2",
     demoUrl: "https://github.com/Pxnzerr/Laravel_test2"
   },
@@ -93,15 +91,15 @@ const projectsData = [
     category: "C# & .NET",
     year: "2026",
     tag: ".NET Core",
-    shortDesc: "Modelagem e implementação de regras de negócio em C# .NET aplicando polimorfismo, interfaces e persistência relacional.",
-    fullDesc: "Aplicação robusta em C# demonstrando domínio de conceitos avançados de orientação a objetos no ecossistema .NET, incluindo herança, interfaces, injeção de dependência e persistência de dados estruturados com separação limpa de camadas.",
+    shortDesc: "Projeto em C# demonstrando modelagem de regras de negócio, interfaces e polimorfismo.",
+    fullDesc: "Aplicação desenvolvida em C# (.NET) focada em princípios de orientação a objetos. Implementa interfaces, classes abstratas, herança, polimorfismo e manipulação de coleções com LINQ.",
     previewType: "code",
     previewSnippet: `public interface IRepository<T> where T : BaseEntity {
     Task<IEnumerable<T>> GetAllAsync();
     Task<T> GetByIdAsync(int id);
     Task AddAsync(T entity);
 }`,
-    technologies: ["C#", ".NET", "POO Avançada", "LINQ", "Clean Code"],
+    technologies: ["C#", ".NET", "POO", "LINQ"],
     githubUrl: "https://github.com/Pxnzerr/POO-",
     demoUrl: "https://github.com/Pxnzerr/POO-"
   },
@@ -111,8 +109,8 @@ const projectsData = [
     category: "Java & Logística",
     year: "2026",
     tag: "Logística",
-    shortDesc: "Sistema de gerenciamento de tráfego aéreo, alocação de pistas de pouso/decolagem e controle de passageiros em Java.",
-    fullDesc: "Simulador e gestor aeroportuário implementado em Java, controlando escalas de aeronaves, ocupação de portões de embarque, reservas de assentos e despacho de bagagens com tratamento completo de concorrência e exceções.",
+    shortDesc: "Sistema em Java para simulação e gerenciamento de escalas de vôos, passageiros e pistas.",
+    fullDesc: "Simulador de operações aeroportuárias em Java, com controle de filas para pousos e decolagens, gerenciamento de reservas de passageiros e status de escalas.",
     previewType: "code",
     previewSnippet: `public class AeroportoManager {
     private Queue<Voo> filaDecolagem = new LinkedList<>();
@@ -122,7 +120,7 @@ const projectsData = [
         if (proximo != null) proximo.executarDecolagem();
     }
 }`,
-    technologies: ["Java", "Algoritmos", "Filas de Prioridade", "POO"],
+    technologies: ["Java", "POO", "Estruturas de Dados", "Filas"],
     githubUrl: "https://github.com/Pxnzerr/JV_Aeroporto",
     demoUrl: "https://github.com/Pxnzerr/JV_Aeroporto"
   },
@@ -132,8 +130,8 @@ const projectsData = [
     category: "Banco de Dados",
     year: "2026",
     tag: "Database",
-    shortDesc: "Repositório central de modelagens de banco de dados relacionais (DER), normalização até a 3ª FN e consultas SQL otimizadas.",
-    fullDesc: "Coleção de modelos de banco de dados corporativos projetados com integridade referencial, triggers, stored procedures, índices de performance (B-Tree/Hash) e queries analíticas avançadas com múltiplos joins e agregação.",
+    shortDesc: "Modelagens de banco de dados relacional, diagramas entidade-relacionamento e consultas SQL.",
+    fullDesc: "Repositório com esquemas de banco de dados relacionais, normalização de tabelas (1FN a 3FN), criação de tabelas com chaves estrangeiras e scripts de consultas com joins, agrupamentos e filtros analíticos.",
     previewType: "code",
     previewSnippet: `SELECT 
     c.nome AS cliente,
@@ -144,7 +142,7 @@ INNER JOIN pedidos p ON p.cliente_id = c.id
 GROUP BY c.id, c.nome
 HAVING total_pedidos > 5
 ORDER BY faturamento DESC;`,
-    technologies: ["SQL", "MySQL", "PostgreSQL", "Modelagem Relacional", "Query Tuning"],
+    technologies: ["SQL", "MySQL", "PostgreSQL", "Modelagem de Dados"],
     githubUrl: "https://github.com/Pxnzerr/SQL-projects",
     demoUrl: "https://github.com/Pxnzerr/SQL-projects"
   },
@@ -154,8 +152,8 @@ ORDER BY faturamento DESC;`,
     category: "Automação & Scripting",
     year: "2026",
     tag: "Automação",
-    shortDesc: "Script de automação inteligente e parser de partituras para simulação de piano virtual com temporização milimétrica.",
-    fullDesc: "Ferramenta de automação desenvolvida em linguagem de scripting para interpretação de partituras musicais em formato alfanumérico e reprodução precisa em teclados e pianos virtuais com controle de atrasos (latency compensation) e acentuações dinâmicas.",
+    shortDesc: "Script de automação em AutoHotkey para reprodução sequencial de partituras em teclado virtual.",
+    fullDesc: "Script desenvolvido para leitura e execução de sequências de notas musicais em formato alfanumérico, automatizando toques de teclado em pianos virtuais com controle de temporização.",
     previewType: "code",
     previewSnippet: `; AutoHotkey Precision Macro Player
 SetKeyDelay, 45, 15
@@ -166,7 +164,7 @@ PlaySheet(notes) {
         Sleep, 30
     }
 }`,
-    technologies: ["AutoHotkey", "Scripting", "Automação", "Timing Optimization"],
+    technologies: ["AutoHotkey", "Scripting", "Automação"],
     githubUrl: "https://github.com/Pxnzerr/Virtual-Piano-Sheets-Macro-",
     demoUrl: "https://github.com/Pxnzerr/Virtual-Piano-Sheets-Macro-"
   }
